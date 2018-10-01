@@ -5,9 +5,9 @@
   <subtitle>A random fucker</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://yuicheng.github.io/"/>
   <updated>2018-09-29T08:27:39.509Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://yuicheng.github.io/</id>
   
   <author>
     <name>Yui Cheng</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/09/29/hello-world/"/>
-    <id>http://yoursite.com/2018/09/29/hello-world/</id>
+    <link href="https://yuicheng.github.io/2018/09/29/hello-world/"/>
+    <id>https://yuicheng.github.io/2018/09/29/hello-world/</id>
     <published>2018-09-29T08:27:39.509Z</published>
     <updated>2018-09-29T08:27:39.509Z</updated>
     
