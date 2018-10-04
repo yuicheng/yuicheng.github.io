@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>post</title>
+      <link href="/2018/10/04/post/"/>
+      <url>/2018/10/04/post/</url>
+      
+        <content type="html"><![CDATA[<h1 id="gdb-peda-amp-pwndbg-commonly-used-commands"><a href="#gdb-peda-amp-pwndbg-commonly-used-commands" class="headerlink" title="gdb-peda &amp; pwndbg commonly used commands"></a>gdb-peda &amp; pwndbg commonly used commands</h1><hr><h2 id="Breakpoints"><a href="#Breakpoints" class="headerlink" title="Breakpoints"></a>Breakpoints</h2><p>‘b / break *addr’ or ‘b func’ bp at addr or bp at func</p><p>‘tb’ one-time-only breakpoint</p><p>‘info b’ view all breakpoints</p><p>‘watch *addr’ stop when mem at addr changed.</p><hr><h2 id="Control-amp-debugging"><a href="#Control-amp-debugging" class="headerlink" title="Control &amp; debugging"></a>Control &amp; debugging</h2><p><code>c</code> continue</p><p><code>r</code> run</p><p><code>ni</code> step over</p><p><code>si</code> step in</p><p><code>fini</code> run till func ret</p><p><code>return expr</code> assign return value of expr</p><hr><p><code>s / stack</code> show stack and registers and disasm</p><p><code>bt</code> current stack frame</p><p>​    <code>Example</code></p><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">0  0xf7e250d0 <span class="hljs-keyword">in</span> gets () from /usr/lib32/libc.so.6</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">1  0x080486b3 <span class="hljs-keyword">in</span> main () at ret2text.c:24</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">2  0xf7dd6b41 <span class="hljs-keyword">in</span> __libc_start_main () from /usr/lib32/libc.so.6</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">3  0x08048521 <span class="hljs-keyword">in</span> _start ()</span></span><br></pre></td></tr></table></figure><hr><h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p><code>bins</code> show bins</p><p><code>vmmap</code> show virtual memory map</p><p><code>shellcode</code> generate shellcode</p><p><code>context</code> show context contents</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2018/09/29/hello-world/"/>
       <url>/2018/09/29/hello-world/</url>
