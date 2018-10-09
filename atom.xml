@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuicheng.github.io/"/>
-  <updated>2018-10-05T04:58:07.015Z</updated>
+  <updated>2018-10-09T11:36:37.311Z</updated>
   <id>https://yuicheng.github.io/</id>
   
   <author>
@@ -17,23 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>post</title>
+    <title>gdb-peda &amp; pwndbg commonly used commands</title>
     <link href="https://yuicheng.github.io/2018/10/04/gdb-peda%20&amp;%20pwndbg%20commonly%20used%20commands/"/>
     <id>https://yuicheng.github.io/2018/10/04/gdb-peda &amp; pwndbg commonly used commands/</id>
     <published>2018-10-04T19:59:24.000Z</published>
-    <updated>2018-10-05T04:58:07.015Z</updated>
+    <updated>2018-10-09T11:36:37.311Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="gdb-peda-amp-pwndbg-commonly-used-commands"><a href="#gdb-peda-amp-pwndbg-commonly-used-commands" class="headerlink" title="gdb-peda &amp; pwndbg commonly used commands"></a>gdb-peda &amp; pwndbg commonly used commands</h1><hr><h2 id="Breakpoints"><a href="#Breakpoints" class="headerlink" title="Breakpoints"></a>Breakpoints</h2><p><code>b / break *addr</code> or <code>b func</code> bp at addr or bp at func</p><p><code>tb</code> one-time-only breakpoint</p><p><code>info b</code> view all breakpoints</p><p><code>watch *addr</code> stop when mem at addr changed.</p><hr><h2 id="Control-amp-debugging"><a href="#Control-amp-debugging" class="headerlink" title="Control &amp; debugging"></a>Control &amp; debugging</h2><p><code>c</code> continue</p><p><code>r</code> run</p><p><code>ni</code> step over</p><p><code>si</code> step in</p><p><code>fini</code> run till func ret</p><p><code>return expr</code> assign return value of expr</p><hr><p><code>s / stack</code> show stack and registers and disasm</p><p><code>bt</code> current stack frame</p><p>​    <code>Example</code></p><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span>0  0xf7e250d0 in gets () from /usr/lib32/libc.so.6</span><br><span class="line"><span class="hljs-meta">#</span>1  0x080486b3 in main () at ret2text.c:24</span><br><span class="line"><span class="hljs-meta">#</span>2  0xf7dd6b41 in __libc_start_main () from /usr/lib32/libc.so.6</span><br><span class="line"><span class="hljs-meta">#</span>3  0x08048521 in _start ()</span><br></pre></td></tr></table></figure><hr><h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p><code>bins</code> show bins</p><p><code>vmmap</code> show virtual memory map</p><p><code>shellcode</code> generate shellcode</p><p><code>context</code> show context contents</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Breakpoints"><a href="#Breakpoints" class="headerlink" title="Breakpoints"></a>Breakpoints</h2><p><code>b / break *addr</code> or <code>b func</code> bp at addr or bp at func</p><p><code>tb</code> one-time-only breakpoint</p><p><code>info b</code> view all breakpoints</p><p><code>watch *addr</code> stop when mem at addr changed.</p><hr><h2 id="Control-amp-debugging"><a href="#Control-amp-debugging" class="headerlink" title="Control &amp; debugging"></a>Control &amp; debugging</h2><p><code>c</code> continue</p><p><code>r</code> run</p><p><code>ni</code> step over</p><p><code>si</code> step in</p><p><code>fini</code> run till func ret</p><p><code>return expr</code> assign return value of expr</p><hr><p><code>s / stack</code> show stack and registers and disasm</p><p><code>bt</code> current stack frame</p><p>​    <code>Example</code></p><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span>0  0xf7e250d0 in gets () from /usr/lib32/libc.so.6</span><br><span class="line"><span class="hljs-meta">#</span>1  0x080486b3 in main () at ret2text.c:24</span><br><span class="line"><span class="hljs-meta">#</span>2  0xf7dd6b41 in __libc_start_main () from /usr/lib32/libc.so.6</span><br><span class="line"><span class="hljs-meta">#</span>3  0x08048521 in _start ()</span><br></pre></td></tr></table></figure><hr><h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p><code>bins</code> show bins</p><p><code>vmmap</code> show virtual memory map</p><p><code>shellcode</code> generate shellcode</p><p><code>context</code> show context contents</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;gdb-peda-amp-pwndbg-commonly-used-commands&quot;&gt;&lt;a href=&quot;#gdb-peda-amp-pwndbg-commonly-used-commands&quot; class=&quot;headerlink&quot; title=&quot;gdb-peda
+        &lt;h2 id=&quot;Breakpoints&quot;&gt;&lt;a href=&quot;#Breakpoints&quot; class=&quot;headerlink&quot; title=&quot;Breakpoints&quot;&gt;&lt;/a&gt;Breakpoints&lt;/h2&gt;&lt;p&gt;&lt;code&gt;b / break *addr&lt;/code&gt; or &lt;c
       
     
     </summary>
     
+    
+      <category term="pwn gdb linux" scheme="https://yuicheng.github.io/tags/pwn-gdb-linux/"/>
     
   </entry>
   
