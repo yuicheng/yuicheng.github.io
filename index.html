@@ -130,10 +130,15 @@ user root</code> 2. 从 USTC 或者清华的镜像站下载 archlinux-bootstrap�
 * lib64
 * sbin
 * usr
-* var 3. 从运行 Arch 的电脑或者软件源下载 fakeroot-tcp 并且放在文件系统中一个方便的目录下 （如果你想使用 
-</code></pre><p>AUR ，这一步是必要的） 4. 再次进入 Ubuntu 并运行 <code>pacman-key —init pacman-key —populate archlinux pacman -U 
-path-to-fakeroot-tcp pacman -Syyu base base-devel</code> 5. 新建一个用户并且添加到 sudoers</p>
-<ol start="6">
+* var 
+</code></pre><ol start="3">
+<li>从运行 Arch 的电脑或者软件源下载 fakeroot-tcp 并且放在文件系统中一个方便的目录下 （如果你想使用<br>AUR ，这一步是必要的） </li>
+<li>再次进入 Ubuntu 并运行 <pre><code>pacman-key —init 
+pacman-key —populate archlinux 
+pacman -U path-to-fakeroot-tcp 
+pacman -Syyu base base-devel 
+</code></pre></li>
+<li>新建一个用户并且添加到 sudoers</li>
 <li>开始欢乐 </li>
 </ol>
 
