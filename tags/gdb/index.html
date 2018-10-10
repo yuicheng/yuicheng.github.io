@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Hello World - ~/yui/.thoughts.md</title>
+<title>Tag: gdb - ~/yui/.thoughts.md</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -99,53 +99,64 @@
     </div>
 </nav>
 
-    <section class="section">
+    <section class="section section-heading">
     <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
+        <div class="content">
+            <h5>#gdb</h5>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Hello World
+            <a href="/2018/10/04/gdb-peda & pwndbg commonly used commands/" itemprop="url">gdb-peda &amp; pwndbg commonly used commands</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2018-09-29T08:27:39.509Z" itemprop="datePublished">Sep 29 2018</time>
+            <time datetime="2018-10-04T19:59:24.000Z" itemprop="datePublished">Oct 4 2018</time>
         </span>
         
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="Breakpoints"><a href="#Breakpoints" class="headerlink" title="Breakpoints"></a>Breakpoints</h2><p><code>b / break *addr</code> or <code>b func</code> bp at addr or bp at func</p>
+<p><code>tb</code> one-time-only breakpoint</p>
+<p><code>info b</code> view all breakpoints</p>
+<p><code>watch *addr</code> stop when mem at addr changed.</p>
+<hr>
+<h2 id="Control-amp-debugging"><a href="#Control-amp-debugging" class="headerlink" title="Control &amp; debugging"></a>Control &amp; debugging</h2><p><code>c</code> continue</p>
+<p><code>r</code> run</p>
+<p><code>ni</code> step over</p>
+<p><code>si</code> step in</p>
+<p><code>fini</code> run till func ret</p>
+<p><code>return expr</code> assign return value of expr</p>
+<hr>
+<p><code>s / stack</code> show stack and registers and disasm</p>
+<p><code>bt</code> current stack frame</p>
+<p>​    <code>Example</code></p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span>0  0xf7e250d0 in gets () from /usr/lib32/libc.so.6</span><br><span class="line"><span class="hljs-meta">#</span>1  0x080486b3 in main () at ret2text.c:24</span><br><span class="line"><span class="hljs-meta">#</span>2  0xf7dd6b41 in __libc_start_main () from /usr/lib32/libc.so.6</span><br><span class="line"><span class="hljs-meta">#</span>3  0x08048521 in _start ()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p><code>bins</code> show bins</p>
+<p><code>vmmap</code> show virtual memory map</p>
+<p><code>shellcode</code> generate shellcode</p>
+<p><code>context</code> show context contents</p>
 
     
     </div>
     
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2018/10/04/gdb-peda & pwndbg commonly used commands/">gdb-peda &amp; pwndbg commonly used commands</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-next">
-            
-        </span>
-    </div>
     
 </article>
 
 
 
 
+    
+    
     </div>
 </section>
     <footer class="footer">
